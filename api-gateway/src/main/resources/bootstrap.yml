@@ -12,15 +12,16 @@ zuul:
   routes:
     myGoods:
       path: /myGoods/**
+      # 要转发到的服务
       serviceId: goods
-#      允许携带cookie转发
+      # 允许携带cookie转发
       sensitiveHeaders:
-#        全部服务忽略敏感头，都可以携带COOKIE
+  # 全部服务忽略敏感头，都可以携带COOKIE
   sensitive-headers:
-#      禁止外部訪問路径
-#  ignored-patterns:
-#    - /myGoods/goods/goodslist
-#    - /goods/goods/goodslistan
+    # 禁止外部訪問路径
+    #  ignored-patterns:
+    #    - /myGoods/goods/goodslist
+    #    - /goods/goods/goodslistan
     myUser:
       path: /user/**
       serviceId: user
