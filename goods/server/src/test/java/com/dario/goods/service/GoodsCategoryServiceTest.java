@@ -15,9 +15,10 @@ public class GoodsCategoryServiceTest extends GoodsApplicationTests {
 
     @Autowired
     private GoodsCategoryService goodsCategoryService;
+
     @Test
     public void queryGoodsCategoriesByCategoryType() throws Exception {
-        List<GoodsCategory> list=goodsCategoryService.findByCategoryTypeIn(Arrays.asList(1,2));
-        Assert.assertTrue(list.size()>0);
+        List<GoodsCategory> list = goodsCategoryService.findByCategoryTypeIn(Arrays.asList(1, 2));
+        Assert.assertTrue(list.size() > 0);
     }
 }

@@ -16,9 +16,10 @@ public class GoodsRepositoryTest extends GoodsApplicationTests {
 
     @Autowired
     private GoodsRepository goodsRepository;
+
     @Test
-    public void queryAllByGoodsStatus() throws  Exception{
-        List<Goods> list=goodsRepository.queryAllByGoodsStatus(0);
-        Assert.assertTrue(list.size()>0);
+    public void queryAllByGoodsStatus() throws Exception {
+        List<Goods> list = goodsRepository.queryAllByGoodsStatus(0);
+        Assert.assertTrue(list.size() > 0);
     }
 }

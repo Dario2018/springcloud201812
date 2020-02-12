@@ -1,4 +1,6 @@
 package com.dario.schedule.servlet;
 
-public class ReportExcelServlet {
+import javax.servlet.http.HttpServlet;
+
+public class ReportExcelServlet extends HttpServlet {
 }

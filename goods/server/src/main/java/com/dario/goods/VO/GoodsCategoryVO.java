@@ -9,10 +9,10 @@ import java.util.List;
 public class GoodsCategoryVO {
 
     @JsonProperty("name")
-    private  String categoryName;
+    private String categoryName;
 
     @JsonProperty("type")
-    private  Integer categoryType;
+    private Integer categoryType;
 
     @JsonProperty("goods")
     private List<GoodsInfoVo> goodsInfoVoList;

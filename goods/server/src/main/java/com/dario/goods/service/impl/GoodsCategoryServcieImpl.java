@@ -13,6 +13,7 @@ public class GoodsCategoryServcieImpl implements GoodsCategoryService {
 
     @Autowired
     private GoodsCategoryRepository goodsCategoryRepository;
+
     @Override
     public List<GoodsCategory> findByCategoryTypeIn(List<Integer> categoryList) throws Exception {
         return goodsCategoryRepository.findByCategoryTypeIn(categoryList);

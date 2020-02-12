@@ -1,9 +1,8 @@
-package com.dario.server.utils;
+package com.dario.apigateway.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
 
 /**
  * @author Dario

@@ -19,7 +19,7 @@ public class GoodsServiceTest extends GoodsApplicationTests {
 
     @Test
     public void queryAllByGoodsStatus() throws Exception {
-        List<Goods> list=goodsService.queryAllByGoodsStatus();
-        Assert.assertTrue(list.size()>0);
+        List<Goods> list = goodsService.queryAllByGoodsStatus();
+        Assert.assertTrue(list.size() > 0);
     }
 }

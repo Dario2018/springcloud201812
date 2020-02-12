@@ -1,4 +1,4 @@
-package com.dario.order.utils;
+package com.dario.server.utils;
 
 import java.util.Random;
 

@@ -1,0 +1,32 @@
+{
+  "code": 0,
+  "msg": "成功",
+  "data": [
+    {
+      "name": "冰冻的",
+      "type": 1,
+      "goods": [
+        {
+          "id": "12345678",
+          "name": "可口可乐",
+          "price": 10,
+          "decription": "饮料",
+          "icon": null
+        }
+      ]
+    },
+    {
+      "name": "热乎乎的",
+      "type": 2,
+      "goods": [
+        {
+          "id": "38998899",
+          "name": "汉堡",
+          "price": 10,
+          "decription": "面包类",
+          "icon": null
+        }
+      ]
+    }
+  ]
+}

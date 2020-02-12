@@ -1,8 +1,9 @@
 package com.dario.goods.VO;
 
 /*
-* HTTP 请求返回外层数据对象
-* */
+ * HTTP 请求返回外层数据对象
+ * */
+
 import lombok.Data;
 
 @Data

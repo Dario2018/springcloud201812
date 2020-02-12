@@ -1,12 +1,12 @@
 package com.dario.order.client;
 
 
-import com.dario.order.client.config.GoodsClient;
-
 import com.dario.order.common.GoodsInfoOutput;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +26,7 @@ public class OrderClientController {
 
     @Autowired
     private GoodsClient goodsClient;
-    //第二种
+//    //第二种
 //    @Autowired
 //    private LoadBalancerClient loadBalancerClient;
 
@@ -36,17 +36,18 @@ public class OrderClientController {
 
     @GetMapping("/getGoodsMessage")
     public String getGoodsMessage() {
-         //第一种
+        //第一种
 //        RestTemplate restTemplate = new RestTemplate();
 //        String response = restTemplate.getForObject("http://localhost:8080/servicegoods/msg", String.class);
         //  第二种
 //        RestTemplate restTemplate=new RestTemplate();
 //        ServiceInstance serviceInstance = loadBalancerClient.choose("GOODS");
-//        String url = String.format("http://%s:%s", serviceInstance.getHost(), serviceInstance.getPort());
+//        String url = String.format("http://%s:%s", serviceInstance.getHost(), serviceInstance.getPort())+"/servicegoods/msg";
 //        String response = restTemplate.getForObject(url, String.class);
         //第三种注解
-//            String response=restTemplate.getForObject("http://GOODS/servicegoods/msg",String.class);
-            String response=goodsClient.goodsMsg();
+//        String response=restTemplate.getForObject("http://GOODS/servicegoods/msg",String.class);
+        //第四种
+        String response = goodsClient.getMessage();
         log.info("response={}", response);
         return response;
     }
@@ -55,12 +56,11 @@ public class OrderClientController {
      * 查询商品goods服务逻辑（测试）
      */
     @PostMapping("/queryGoodsIdList")
-    public String queryGoodsIdList(){
-        List<GoodsInfoOutput> goodsInfoOutputList=goodsClient.listForOrder(Arrays.asList("99999465","15567788"));
-        log.info("respose={}",goodsInfoOutputList);
+    public String queryGoodsIdList() {
+        List<GoodsInfoOutput> goodsInfoOutputList = goodsClient.listForOrder(Arrays.asList("99999465", "15567788"));
+        log.info("respose={}", goodsInfoOutputList);
         return "ok";
     }
-
 
 
 }

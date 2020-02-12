@@ -1,6 +1,8 @@
-package com.dario.order.utils;
+package com.dario.server.utils;
 
-import com.dario.order.VO.ResultVO;
+
+import com.dario.server.VO.ResultVO;
+import com.dario.server.unums.ResultEnum;
 
 public class ResultVOUtils {
 
@@ -9,6 +11,13 @@ public class ResultVOUtils {
         resultVO.setCode(0);
         resultVO.setMessage("成功");
         resultVO.setT(object);
+        return resultVO;
+    }
+
+    public static ResultVO error(ResultEnum resultEnum){
+        ResultVO resultVO=new ResultVO();
+        resultVO.setCode(resultEnum.getCode());
+        resultVO.setMessage(resultEnum.getMessage());
         return resultVO;
     }
 }

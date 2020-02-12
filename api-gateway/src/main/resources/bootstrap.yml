@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: api-gateway
+  redis:
+    host: 192.168.187.128
+    port: 6379
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.187.128:8761/eureka/
+zuul:
+  routes:
+    myGoods:
+      path: /myGoods/**
+      serviceId: goods
+#      允许携带cookie转发
+      sensitiveHeaders:
+#        全部服务忽略敏感头，都可以携带COOKIE
+  sensitive-headers:
+#      禁止外部訪問路径
+#  ignored-patterns:
+#    - /myGoods/goods/goodslist
+#    - /goods/goods/goodslistan
+    myUser:
+      path: /user/**
+      serviceId: user
+      sensitiveHeanders:
+
+#    简洁实现
+#    goods: /myGoods/**
+
+#启动时不需要使用springsecurity
+management:
+  security:
+    enabled: false
+

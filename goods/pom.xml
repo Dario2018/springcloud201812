@@ -47,7 +47,14 @@
                 <artifactId>goods-common</artifactId>
                 <version>${goods-common}</version>
             </dependency>
+            <!--解析xml类型文件-->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>1.6.1</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
 

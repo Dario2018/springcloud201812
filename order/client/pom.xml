@@ -10,7 +10,7 @@
     <name>client</name>
 
     <parent>
-       <groupId>com.dario</groupId>
+        <groupId>com.dario</groupId>
         <artifactId>order</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>

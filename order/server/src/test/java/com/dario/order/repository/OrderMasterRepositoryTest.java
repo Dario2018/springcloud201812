@@ -17,9 +17,10 @@ public class OrderMasterRepositoryTest extends OrderApplicationTests {
 
     @Autowired
     private OrderMasterRepository orderMasterRepository;
+
     @Test
-    public void testSave(){
-        OrderMaster orderMaster=new OrderMaster();
+    public void testSave() {
+        OrderMaster orderMaster = new OrderMaster();
         orderMaster.setOrderId("12345678");
         orderMaster.setBuyerAddress("广东湛江");
         orderMaster.setBuyerName("dario");
@@ -30,8 +31,8 @@ public class OrderMasterRepositoryTest extends OrderApplicationTests {
         orderMaster.setOrderStatus(0);
         orderMaster.setUpdateTime(new Date());
         orderMaster.setPayStatus(0);
-        OrderMaster result=orderMasterRepository.save(orderMaster);
-        Assert.assertTrue(result!=null);
+        OrderMaster result = orderMasterRepository.save(orderMaster);
+        Assert.assertTrue(result != null);
     }
 
 }

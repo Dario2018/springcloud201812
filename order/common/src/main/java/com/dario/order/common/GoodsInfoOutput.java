@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 
 @Data
 public class GoodsInfoOutput {
+
     //商品的名称
     private String goodsId;
     //商品名字
@@ -22,5 +23,4 @@ public class GoodsInfoOutput {
     private Integer goodsStatus;
     //所属类目编号
     private Integer categoryType;
-;
 }

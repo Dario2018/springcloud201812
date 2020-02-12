@@ -1,6 +1,6 @@
 package com.dario.order.exception;
 
-import com.dario.order.unums.ResultEnum;
+import com.dario.order.enums.ResultEnum;
 
 public class OrderException extends RuntimeException {
 
@@ -11,8 +11,8 @@ public class OrderException extends RuntimeException {
         this.code = code;
     }
 
-    public OrderException(ResultEnum resultEnum){
+    public OrderException(ResultEnum resultEnum) {
         super(resultEnum.getMessage());
-        this.code=resultEnum.getCode();
+        this.code = resultEnum.getCode();
     }
 }

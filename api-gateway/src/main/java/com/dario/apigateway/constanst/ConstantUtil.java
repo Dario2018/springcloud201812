@@ -1,4 +1,4 @@
-package com.dario.server.constanst;
+package com.dario.apigateway.constanst;
 
 public interface ConstantUtil {
 

@@ -1,4 +1,7 @@
 package com.dario.server.repository;
 
-public interface PersistentLoginsRespository {
+import com.dario.server.dataObject.PersistentLogins;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PersistentLoginsRespository extends JpaRepository<PersistentLogins,String> {
 }

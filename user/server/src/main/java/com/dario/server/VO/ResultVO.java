@@ -1,4 +1,4 @@
-package com.dario.order.VO;
+package com.dario.server.VO;
 
 import lombok.Data;
 
