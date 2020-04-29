@@ -5,7 +5,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: chen2018
-    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
   jpa:
     show-sql: true
   rabbitmq:
@@ -32,7 +32,6 @@ spring:
 eureka:
   client:
     service-url:
-#      defaultZone: http://192.168.187.128:8761/eureka/
       defaultZone: http://localhost:8761/eureka/
 #      默认方法熔断时间
 hystrix:
