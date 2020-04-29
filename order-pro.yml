@@ -1,0 +1,68 @@
+spring:
+  application:
+    name: order
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: dario2020
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  jpa:
+    show-sql: true
+  rabbitmq:
+    addresses: 192.168.206.128
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        myMessage:
+          group: order
+          content-type: application/json
+  redis:
+    host: 192.168.206.128
+    port: 6379
+#    服务追踪可视化http://192.168.187.128:9411/zipkin/
+  zipkin:
+    base-url: http://192.168.187.128:9411/
+    enabled: true
+  sleuth:
+    sampler:
+      probability: 1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#      默认方法熔断时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+    getGoodsInfoList01:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+#            服务降级配置
+feign:
+  hystrix:
+    enabled: true
+management:
+  server:
+    servlet:
+      context-path: /
+#      链路监控：服务追踪
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
+goods:
+    ribbon:
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+env:
+  pro
+person:
+  username: dario2010
+  passworld: pro
