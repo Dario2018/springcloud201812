@@ -1,14 +1,14 @@
 spring:
   application:
-    name: order
+    name: goods
   cloud:
     config:
       discovery:
         enabled: true
         service-id: CONFIG
-      profile: dev # 自动刷新时拉取的order-${profile}.yml 配置文件 ,dev可以改成test
+      profile: dev # 自动刷新时拉取的goods-${profile}.yml 配置文件 ,dev可以改成test
 server:
-  port: 8087
+  port: 8089
 eureka:
   client:
     service-url:

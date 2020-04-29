@@ -2,12 +2,12 @@ spring:
   application:
     name: api-gateway
   redis:
-    host: 192.168.187.128
+    host: 192.168.206.128
     port: 6379
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.187.128:8761/eureka/
+      defaultZone: http://local:8761/eureka/
 zuul:
   routes:
     myGoods:

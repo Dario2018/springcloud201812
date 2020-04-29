@@ -3,6 +3,7 @@ package com.dario.goods.controller;
 import com.dario.goods.VO.GoodsCategoryVO;
 import com.dario.goods.VO.GoodsInfoVo;
 import com.dario.goods.VO.ResultVO;
+import com.dario.goods.config.ProductesConfig;
 import com.dario.goods.entity.Goods;
 import com.dario.goods.entity.GoodsCategory;
 import com.dario.goods.service.GoodsCategoryService;
@@ -11,6 +12,7 @@ import com.dario.goods.utils.ResultsVoUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/goods")
 @Slf4j
+@RefreshScope
 public class GoodsController {
 
     @Autowired
@@ -32,6 +35,18 @@ public class GoodsController {
 
     @Autowired
     private GoodsCategoryService goodsCategoryService;
+
+    @Autowired
+    private ProductesConfig productesConfig;
+
+
+    /*
+     * 测试goods的配置文件动态刷新
+     * */
+    @RequestMapping("/test")
+    public String test() {
+        return productesConfig.getName() + "||" + productesConfig.getAmount();
+    }
 
     /*
      * 1.查询所有在架的商品
@@ -64,9 +79,9 @@ public class GoodsController {
                 List<GoodsInfoVo> goodsInfoVos = new ArrayList<GoodsInfoVo>();
 
                 goodsList.stream().forEach(goods -> {
-                    if (goods.getCategoryType().equals(goodsCategory.getCategoryType())){
-                        GoodsInfoVo goodsInfoVo=new GoodsInfoVo();
-                        BeanUtils.copyProperties(goods,goodsInfoVo);
+                    if (goods.getCategoryType().equals(goodsCategory.getCategoryType())) {
+                        GoodsInfoVo goodsInfoVo = new GoodsInfoVo();
+                        BeanUtils.copyProperties(goods, goodsInfoVo);
                         goodsInfoVos.add(goodsInfoVo);
                     }
                 });
