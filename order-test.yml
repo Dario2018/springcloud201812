@@ -61,4 +61,4 @@ env:
   test
 person:
   username: test_dario2010
-  passworld: test
+  password: test
