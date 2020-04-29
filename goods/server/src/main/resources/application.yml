@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: goods
@@ -5,11 +6,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
-    password: chen2018
+    password: dario2020
   jpa:
     show-sql: true
   rabbitmq:
-    addresses: 192.168.187.128
+    addresses: 192.168.206.128
     port: 5672
     username: guest
     password: guest
@@ -22,9 +23,10 @@ spring:
 eureka:
   client:
     service-url:
-#      defaultZone: http://192.168.187.128:8761/eureka/
       defaultZone: http://localhost:8761/eureka/
 #      链路监控：服务追踪
 logging:
   level:
     org.springframework.cloud.openfeign: debug
+server:
+  port: 8089

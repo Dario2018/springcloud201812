@@ -5,6 +5,8 @@ eureka:
     register-with-eureka: false
   server:
     enable-self-preservation: false
+  instance:
+    hostname: https://www.cnblogs.com/xmf3628/p/11999956.html
 spring:
   application:
     name: eureka

@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="goods-client" />
-        <module name="goods-common" />
         <module name="goods-server" />
+        <module name="goods-common" />
+        <module name="goods-client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

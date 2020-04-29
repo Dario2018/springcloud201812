@@ -20,7 +20,7 @@ public class Goods {
     //商品价格
     private BigDecimal goodsPrice;
     //商品库存
-    private int goodsStock;
+    private Integer goodsStock;
     //商品描述
     private String goodsDecription;
     //商品图案

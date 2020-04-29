@@ -8,6 +8,7 @@ import com.dario.goods.entity.GoodsCategory;
 import com.dario.goods.service.GoodsCategoryService;
 import com.dario.goods.service.GoodsService;
 import com.dario.goods.utils.ResultsVoUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,9 +24,8 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/goods")
+@Slf4j
 public class GoodsController {
-
-//    private static final Logger LOGGER=Logger.getLogger(GoodsController.class.getName());
 
     @Autowired
     private GoodsService goodsService;
@@ -63,13 +63,6 @@ public class GoodsController {
 
                 List<GoodsInfoVo> goodsInfoVos = new ArrayList<GoodsInfoVo>();
 
-//                for (Goods goods : goodsList) {
-//                    if (goods.getCategoryType().equals(goodsCategory.getCategoryType())) {
-//                        GoodsInfoVo goodsInfoVo = new GoodsInfoVo();
-//                        BeanUtils.copyProperties(goods, goodsInfoVo);
-//                        goodsInfoVos.add(goodsInfoVo);
-//                    }
-//                }
                 goodsList.stream().forEach(goods -> {
                     if (goods.getCategoryType().equals(goodsCategory.getCategoryType())){
                         GoodsInfoVo goodsInfoVo=new GoodsInfoVo();
@@ -83,7 +76,6 @@ public class GoodsController {
             }
             return ResultsVoUtils.success(goodsCategoryVOList);
         } catch (Exception e) {
-//            LOGGER.log(Level.ALL,e.getMessage());
             return ResultsVoUtils.error(null);
         }
 

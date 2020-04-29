@@ -1,6 +1,7 @@
 package com.dario.order.controller;
 
 import com.dario.order.VO.ResultVO;
+import com.dario.order.config.PersonConfig;
 import com.dario.order.convert.OrderForm2OrderDTOConvert;
 import com.dario.order.dto.OrderDTO;
 import com.dario.order.exception.OrderException;
@@ -10,6 +11,8 @@ import com.dario.order.enums.ResultEnum;
 import com.dario.order.utils.ResultVOUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +25,19 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/order")
+@RefreshScope
 @Slf4j
 public class OrderController {
 
 
     @Autowired
     private OrderService orderService;
+
+    @Value("${person.username}")
+    private String username;
+
+    @Autowired
+    private PersonConfig personConfig;
 
     /**
      * 生成订单详情
@@ -90,6 +100,8 @@ public class OrderController {
      * */
     @RequestMapping("/test")
     public String test() {
-        return "hello";
+        System.out.println(username);
+        System.out.println(personConfig.getUsername()+"-->"+personConfig.getPassword());
+        return username;
     }
 }
