@@ -6,12 +6,7 @@ spring:
       discovery:
         enabled: true
         service-id: CONFIG
-      profile: dev
-  rabbitmq:
-    addresses: 192.168.206.128
-    port: 5672
-    username: guest
-    password: guest
+      profile: dev # 自动刷新时拉取的order-${profile}.yml 配置文件 ,dev可以改成test
 server:
   port: 8087
 eureka:
