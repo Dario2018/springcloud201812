@@ -61,4 +61,4 @@ env:
   dev
 person:
   username: dev_dario2014
-  passworld: dev
+  password: dev
