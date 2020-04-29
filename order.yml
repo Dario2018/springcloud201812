@@ -62,4 +62,4 @@ goods:
     ribbon:
       NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 env:
-  dev
+  test
