@@ -65,5 +65,5 @@ goods:
 env:
   dev
 person:
-  username: dev_12345678
+  username: dev_aaaabbbb
   password: dev_87654321
