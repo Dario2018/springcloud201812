@@ -1,7 +1,7 @@
 spring:
   application:
     name: order
-  profiles: pro
+  profiles: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -63,7 +63,7 @@ goods:
     ribbon:
       NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 env:
-  pro
+  dev
 person:
-  username: pro_dario2010
-  passworld: pro
+  username: dev_dario2010
+  passworld: dev
