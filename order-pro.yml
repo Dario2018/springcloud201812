@@ -1,6 +1,8 @@
 spring:
   application:
     name: order
+  profiles:
+    pro
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
