@@ -65,5 +65,5 @@ goods:
 env:
   dev
 person:
-  username: dev_dario2020
-  password: dev_password2020
+  username: dev_12345678
+  password: dev_87654321
