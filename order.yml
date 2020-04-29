@@ -63,3 +63,6 @@ goods:
       NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 env:
   test
+person:
+  username: dario
+  passworld: test
