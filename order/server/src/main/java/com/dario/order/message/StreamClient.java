@@ -6,24 +6,23 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.SubscribableChannel;
 
 /*
-*
-*
-* */
+ *
+ *
+ * */
 public interface StreamClient {
 
-    String INPUT="sendToInput";
+    String INPUT = "sendToInput"; // 消息来向通道名字
+    String OUTPUT = "output";  // 消息发向的通道名字
 
-    String INPUT2="sendToInput2";
+    String INPUT2 = "sendToInput2";
 
-    @Input(value =StreamClient.INPUT)
+    @Input(value = StreamClient.INPUT)
     SubscribableChannel input();
 
-    @Output
+    @Output(value = StreamClient.OUTPUT)
     MessageChannel output();
 
-    @Input(value =StreamClient.INPUT2)
+    @Input(value = StreamClient.INPUT2)
     SubscribableChannel input2();
 
-    @Output
-    MessageChannel output2();
 }

@@ -53,7 +53,7 @@ public class MqReceiver {
      * @param message
      */
     @RabbitListener(bindings = @QueueBinding(
-            value = @Queue("computerOrder"),
+            value = @Queue("computerQueue"),
             exchange = @Exchange("myOrder"),
             key = "computer"
     ))
