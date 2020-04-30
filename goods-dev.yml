@@ -5,11 +5,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
-    password: chen2018
+    password: dario2020
   jpa:
     show-sql: true
   rabbitmq:
-    addresses: 192.168.187.128
+    addresses: 192.168.206.128
     port: 5672
     username: guest
     password: guest
