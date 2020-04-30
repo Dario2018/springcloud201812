@@ -15,9 +15,6 @@ spring:
         myMessage:
           group: order
           content-type: application/json
-        sendToInput:
-          group: order
-          content-type: application/json
         output:
           group: order
           content-type: application/json
