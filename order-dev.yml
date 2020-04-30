@@ -5,7 +5,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: chen2018
+    password: dario2020
     url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
   jpa:
     show-sql: true
@@ -16,12 +16,12 @@ spring:
           group: order
           content-type: application/json
   rabbitmq:
-    addresses: 192.168.187.128
+    addresses: 192.168.206.128
     port: 5672
     username: guest
     password: guest
   redis:
-    host: 192.168.187.128
+    host: 192.168.206.128
     port: 6379
 #    服务追踪可视化http://192.168.187.128:9411/zipkin/
   zipkin:
