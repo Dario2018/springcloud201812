@@ -36,5 +36,7 @@
 ### user
 ### goods
 ### order
+- 在使用hystrix-dashboard 组件时，配置的地址是：http://localhost:8087/actuator/hystrix.stream 具体配置是启动类中已经springAOP 配置是实现了
+- order 服务刷新降级
 ### api-gateway
 ### schedule

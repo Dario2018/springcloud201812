@@ -28,6 +28,11 @@ public class OrderApplication {
         SpringApplication.run(OrderApplication.class, args);
     }
 
+    /*
+    * 使用spring-cloud-starter-netflix-hystrix-dashboard组件所需配置
+    * 可通过访问http://localhost:8087/hystrix 访问到界面
+    * 下面的访问链接配置请参考readme.md
+    * */
     @Bean
     public ServletRegistrationBean getServlet() {
         HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
