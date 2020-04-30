@@ -15,9 +15,6 @@ spring:
         myMessage:
           group: order
           content-type: application/json
-        output:
-          group: order
-          content-type: application/json
   rabbitmq:
     addresses: 192.168.206.128
     port: 5672
