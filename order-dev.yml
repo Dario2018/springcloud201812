@@ -39,8 +39,11 @@ spring:
     sender:
       type: WEB
   sleuth:
+    web:
+      client:
+        enabled: true
     sampler:
-      probability: 1
+      probability: 1.0
 #      默认方法熔断时间
 hystrix:
   command:
