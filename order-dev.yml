@@ -13,15 +13,12 @@ spring:
     stream:
       bindings:
         myMessage:
-          binder: order
           group: order
           content-type: application/json
         sendToInput:
-          binder: order
           group: order
           content-type: application/json
         output:
-          binder: order
           group: order
           content-type: application/json
   rabbitmq:
