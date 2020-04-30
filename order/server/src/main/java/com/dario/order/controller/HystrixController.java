@@ -27,7 +27,7 @@ public class HystrixController {
     @GetMapping("/getGoodsInfoList")
     public String getGoodsInfoList() {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForObject("http://localhost:8080/servicegoods/listForOrder", Arrays.asList("15567788", "99999465"), String.class);
+        return restTemplate.postForObject("http://localhost:8089/servicegoods/listForOrder", Arrays.asList("15567788", "99999465"), String.class);
     }
 
     public String fallback() {
@@ -42,6 +42,11 @@ public class HystrixController {
     public String getGoodsInfoList01() throws InterruptedException {
         Thread.sleep(2000);
         return "hello world";
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "test hystrixcontroller";
     }
 
     public String getGoodsInfoList01Fallback() {
