@@ -6,8 +6,8 @@ spring:
       server:
         git:
           uri: https://github.com/Dario2018/springcloud201812
-          username: Dario2018
-          password: chen2014234123
+          username: ---------
+          password: *********
           search-paths: /*/*/*,/*
   rabbitmq:
     addresses: 192.168.206.128
